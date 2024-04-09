@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming</title>
+    <link rel="stylesheet" href="./app/css/bootstrap.css">
+    <link rel="stylesheet" href="./app/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- start of nav bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img
+                src="data:image/png;base64,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">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./shop.html">shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">contact</a>
+                    </li>
+
+                    </li>
+                </ul>
+            </div>
+            <li class="nav-item dropdown">
+                <img src="./app/assets/user.png" alt="" height="20px" width="20px">
+                <img src="./app/assets/search-interface-symbol.png" alt="" height="20px" width="20px">
+                <img src="./app/assets/heart.png" alt="" height="20px" width="20px">
+                <img src="./app/assets/shopping-cart.png" alt="" height="20px" width="20px">
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+        </div>
+    </nav>
+    <!--  end of nav bar -->
+
+    <!--  start of hero section -->
+
+
+    <div class="container-fluid bg-dark">
+        <div class="container" style="height: 549px;">
+            <div class="row pt-5">
+                <div class="col text-light mt-5 mb-5 p-5">
+                    <h1>BUY YOUR GAMING CONSOLES TODAY</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos ipsam officia eaque facilis
+                        aliquam recusandae perspiciatis deleniti velit? Iure debitis magnam nemo voluptates officia ut
+                        blanditiis, quas laboriosam minus distinctio.</p>
+                    <button type="button" class="btn btn-light rounded-pill">BUY NOW</button>
+                </div>
+                <div class="col text-center mt-5 pt-3">
+                    <img src="./app/assets/gaming consoles.png" alt="" height="350px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  end of hero section -->
+
+
+    <!-- start of our products section -->
+    <div class="container-fluid">
+        <div class="container text-center">
+            <h1 class="mt-3">Our Best Products</h1>
+            <div class="row m-5">
+                <div class="col mt-3">
+                    <div class="card" style="width: 15rem;">
+                        <img src="./app/assets/ps5.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">PS5</h5>
+                            <p class="card-text">$139</p>
+                            <p class="card-text">Best Overall</p>
+                            <a href="#" class="btn btn-light btn-outline-dark rounded-pill">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-3">
+                    <div class="card" style="width: 15rem;">
+                        <img src="./app/assets/xbox series x.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">XBOX SERIES X</h5>
+                            <p class="card-text">$169</p>
+                            <p class="card-text">Best Performance</p>
+                            <a href="#" class="btn btn-primary rounded-pill">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-3">
+                    <div class="card" style="width: 15rem;">
+                        <img src="./app/assets/xbox series s.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">XBOX SERIES S</h5>
+                            <p class="card-text">$122</p>
+                            <p class="card-text">Best Affordable</p>
+                            <a href="#" class="btn btn-light btn-outline-dark rounded-pill">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row m-5">
+                <div class="col mt-3">
+                    <div class="card" style="width: 15rem;">
+                        <img src="./app/assets/nintendo switch oled.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nintendo Switch Oled</h5>
+                            <p class="card-text">$139</p>
+                            <p class="card-text">Best Handheld</p>
+                            <a href="#" class="btn btn-light btn-outline-dark rounded-pill">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-3">
+                    <div class="card" style="width: 15rem;">
+                        <img src="./app/assets/nintendo switch lite.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nintendo Switch Lite</h5>
+                            <p class="card-text">$169</p>
+                            <p class="card-text">Best for Kids</p>
+                            <a href="#" class="btn btn-primary rounded-pill">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-3">
+                    <div class="card" style="width: 15rem;">
+                        <img src="./app/assets/steam deck.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Steam Deck</h5>
+                            <p class="card-text">$154</p>
+                            <p class="card-text">Best for PC Gamers</p>
+                            <a href="#" class="btn btn-light btn-outline-dark rounded-pill">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end of our products section -->
+
+
+    <!-- start of new arrival section -->
+    <div class="container-fluid bg-dark text-light">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col text-center mt-5 pt-3">
+                    <img src="./app/assets/gaming consoles.png" alt="" height="350px">
+                </div>
+                <div class="col mb-5 p-5">
+                    <h2>New Arrival of Gaming Consoles</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Dolore vitae voluptates nisi fuga
+                        consequatur ipsa amet <br>cupiditate quo sapiente itaque animi ducimus cumque, <br>quam
+                        corporis?
+                    </p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Dolore vitae voluptates nisi fuga
+                        consequatur ipsa amet <br>cupiditate quo sapiente itaque animi ducimus cumque, <br>quam
+                        corporis?
+                    </p>
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="#">Read More &rarr;</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of new arrival section -->
+
+    <!-- start of latest running shoes section -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5">
+                    <h1>Our Top Selling Products</h1>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Dolore vitae voluptates nisi fuga
+                        consequatur ipsa amet <br>cupiditate quo sapiente itaque animi ducimus cumque, <br>quam
+                        corporis?
+                    </p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Dolore vitae voluptates nisi fuga
+                        consequatur ipsa amet <br>cupiditate quo sapiente itaque animi ducimus cumque, <br>quam
+                        corporis?
+                    </p>
+                    <br>
+                    <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="#">Read More &rarr;</a>
+                    </p>
+                </div>
+                <div class="col text-center">
+                    <marquee behavior="altenate" direction="left">
+                        <img src="./app/assets/steam deck.webp" alt="" height="350px">
+                        <img src="./app/assets/nintendo switch lite.webp" alt="" height="350px">
+                        <img src="./app/assets/nintendo switch oled.webp" alt="" height="350px">
+                        <img src="./app/assets/xbox series s.webp" alt="" height="350px">
+                        <img src="./app/assets/xbox series x.webp" alt="" height="350px">
+                        <img src="./app/assets/ps5.webp" alt="" height="350px">
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of latest running shoes section -->
+
+    <!-- end of happy customers section -->
+    <div class="container-fluid bg-dark">
+        <div class="container">
+            <h1 class="text-center text-light">HAPPY CUSTOMERS</h1>
+            <div class="row p-5">
+                <div class="col mt-3">
+                    <div class="card brad" style="width: 15rem;">
+                        <img src="./app/assets/cee-removebg-preview.png" class="card-img-top roundsbrad" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">Customer 1</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est cum iste
+                                repellendus mollitia vitae nihil!</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-3">
+                    <div class="card brad" style="width: 15rem;">
+                        <img src="./app/assets/cee-removebg-preview.png" class="card-img-top roundsbrad" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">Customer 2</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est cum iste
+                                repellendus mollitia vitae nihil!</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-3">
+                    <div class="card brad" style="width: 15rem;">
+                        <img src="./app/assets/cee-removebg-preview.png" class="card-img-top roundsbrad" alt="...">
+                        <div class="card-body">
+                            <h2 class="card-title">Customer 3</h2>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est cum iste
+                                repellendus mollitia vitae nihil!</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of happy customers section -->
+
+    <!-- start of footer -->
+
+    <div class=" bg-dark text-light p-5">
+        <div class="container text-left">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <h4>About</h4>
+                        <h6>History</h6>
+                        <h6>Our Team</h6>
+                        <h6>Brand Guidelines</h6>
+                        <h6>Terms & Conditions</h6>
+                        <h6>Privacy Policy</h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <h4>Services</h4>
+                        <h6>How to Order</h6>
+                        <h6>Our Product</h6>
+                        <h6>Order Status</h6>
+                        <h6>Promo</h6>
+                        <h6>Payment Method</h6>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <h4>Title Here</h4>
+                        <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                        <form class="d-flex m-3" role="search">
+                            <input class="form-control me-2 bg-warning" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-outline-success bg-info" type="submit">Search</button>
+                        </form>
+                        <div>
+
+                            <div>
+                                <i class="fa-brands fa-square-instagram fa-2xl"></i>
+                                <i class="fa-brands  fa-square-facebook fa-2xl"></i>
+                                <i class="fa-brands  fa-square-twitter fa-2xl"></i>
+                                <i class="fa-brands fa-square-whatsapp fa-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end of footer section -->
+
+</body>
+
+</html>
